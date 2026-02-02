@@ -1,0 +1,79 @@
+(1Q) clean a dirty sentence for a search engine tokenize it and remove stopwords "The quick,BROWN foxes....they are JUMPING over 10 lazy dogs!"
+
+a) Tokenization
+
+Split the sentence into words.
+
+["The","quick","BROWN","foxes","they","are","JUMPING","over","10","lazy","dogs"]
+
+
+
+b) Normalization
+
+Convert to lowercase
+
+Remove numbers & punctuation
+
+
+["the","quick","brown","fox","they","are","jump","over","lazy","dog"]
+
+
+
+c) Stopword Removal
+
+Remove common words like the, they, are, over.
+
+ Final Output:
+["quick", "brown", "fox", "lazi", "dog"]
+
+
+
+
+2Q)
+We calculate minimum edit distance (insert, delete, substitute).
+
+Comparison:
+START
+STARE
+
+
+S → S 
+
+T → T 
+
+A → A 
+
+R → R 
+
+T → E  (Substitution)
+
+Repair Cost:
+1
+
+
+(Only one substitution needed)
+
+ Keyword matching (Spam / Promotion detection)
+
+Keywords list:
+
+["Win", "cash", "free"]
+
+
+Input sentence:
+
+“you are Winning a free prize now!”
+
+Step 1: Normalize sentence
+["you","are","winning","a","free","prize","now"]
+
+Step 2: Match keywords
+
+Win → matches Winning → True
+
+cash → not present →  False
+
+free → present →  True
+
+ Output:
+True, False, True
